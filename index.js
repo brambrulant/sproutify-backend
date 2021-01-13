@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 
 var client_id = "155902e247ed4596b547913011236638"; // Your client id
 var client_secret = "eec203f7eab242f29a3d2e275755a2f0"; // Your secret
-var redirect_uri = "https://determined-mcnulty-e3e8eb.netlify.app/api/v1/login"; // Your redirect uri
+var redirect_uri = "https://determined-mcnulty-e3e8eb.netlify.app/login"; // Your redirect uri
 
 /**
  * Generates a random string containing numbers and letters
