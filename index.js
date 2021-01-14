@@ -4,7 +4,7 @@ let querystring = require("querystring");
 
 let app = express();
 
-let redirect_uri = process.env.REDIRECT_URI; // "http://localhost:4000/callback";
+let redirect_uri = process.env.REDIRECT_URI;
 
 app.get("/login", function (req, res) {
   res.redirect(
@@ -38,14 +38,12 @@ app.get("/callback", function (req, res) {
   };
   request.post(authOptions, function (error, response, body) {
     var access_token = body.access_token;
-    let uri =
-      "https://determined-mcnulty-e3e8eb.netlify.app/" ||
-      "http://localhost:3000/";
+    let uri = "http://localhost:3000/";
     res.redirect(uri + "?access_token=" + access_token);
   });
 });
 
-let port = process.env.PORT || 4000;
+let port = 4000;
 console.log(process.env.SPOTIFY_CLIENT_ID, process.env.SPOTIFY_SECRET);
 console.log(
   `Listening on port ${port}. Go /login to initiate authentication flow.`
