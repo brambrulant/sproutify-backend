@@ -43,7 +43,7 @@ app.get("/callback", function (req, res) {
   });
 });
 
-const port = 4000 || process.env.PORT;
+const port = process.env.PORT || 4000;
 console.log(process.env.SPOTIFY_CLIENT_ID, process.env.SPOTIFY_SECRET);
 console.log(
   `Listening on port ${port}. Go /login to initiate authentication flow.`
