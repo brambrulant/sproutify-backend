@@ -1,6 +1,7 @@
 let express = require("express");
 let request = require("request");
 let querystring = require("querystring");
+require("dotenv").config();
 
 let app = express();
 
@@ -13,7 +14,8 @@ app.get("/login", function (req, res) {
       querystring.stringify({
         response_type: "code",
         client_id: process.env.SPOTIFY_CLIENT_ID,
-        scope: "user-read-private user-read-email user-top-read",
+        scope:
+          "user-read-private user-read-email user-top-read playlist-read-private playlist-read-collaborative ugc-image-upload playlist-modify-public playlist-modify-private ",
         redirect_uri,
       })
   );
