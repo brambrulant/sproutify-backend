@@ -15,8 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       spotifyId: { type: DataTypes.STRING, allowNull: false, unique: true },
       name: DataTypes.STRING,
-      password: DataTypes.STRING,
-      dateOfBirth: DataTypes.NUMBER,
+      createdAt: DataTypes.DATE,
     },
     {
       sequelize,
